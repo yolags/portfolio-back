@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <header>
+    </header>
+    <section>
+        <div class="home-container">
+            <h1 class="h1-home">Bienvenida, Admin <span class="iconify woman-raising-hand" data-icon="noto:woman-raising-hand-light-skin-tone" data-width="30" data-height="30"></span></h1>
+            <div class="div-content">
+                <h2 class="content-home">¿Qué quieres hacer?</h2>
+            </div>
+        </div>
+        <div class="home-options">
+            <a class="btn btn-option" href="http://127.0.0.1:8000/projects/">Ver mis proyectos</a>
+            <a class="btn btn-option" href="http://127.0.0.1:8000/projects/new">Añadir nuevo proyecto</a>
+        </div>
+    </section>
+{% endblock %}

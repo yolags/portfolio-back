@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proyectos{% endblock %}
+
+{% block body %}
+
+    <header>
+        <a class="header-home btn noto-house btn-extra" href="http://127.0.0.1:8000/home">Home<span class="iconify" data-icon="noto:house" data-width="20" data-height="20"></span></a>
+    </header>
+    <h1>PROYECTOS</h1>
+
+    <table class="table table-projects">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Enlace</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.Nombre }}</td>
+                <td>{{ project.Imagen }}</td>
+                <td>{{ project.Fecha ? project.Fecha|date('Y-m-d') : '' }}</td>
+                <td>{{ project.Descripcion }}</td>
+                <td>{{ project.Enlace }}</td>
+                <td>
+                    <a class="btn btn-dark btn-dark-hover" href="{{ path('app_projects_show', {'id': project.id}) }}">Ver</a>
+                    <a class="btn btn-dark btn-dark-hover" href="{{ path('app_projects_edit', {'id': project.id}) }}">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">No se encontraron registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn-add btn btn-add-extra" href="{{ path('app_projects_new') }}">Añadir proyecto</a>
+{% endblock %}

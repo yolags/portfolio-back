@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Datos del proyecto{% endblock %}
+
+{% block body %}
+    <header>
+        <a class="btn btn-extra" href="{{ path('app_projects_index') }}">Regresar</a>
+        <a class="btn btn-extra" href="{{ path('app_projects_edit', {'id': project.id}) }}">Editar</a>
+    </header>
+
+    <h1>Datos del proyecto</h1>
+
+    <table class="table table-data">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ project.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ project.Nombre }}</td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <td>{{ project.Imagen }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ project.Fecha ? project.Fecha|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Descripción</th>
+                <td>{{ project.Descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Enlace</th>
+                <td>{{ project.Enlace }}</td>
+            </tr>
+            {# (PRIMERA IDEA: METER EL BOTON EN UN TD)
+            <td>
+            {{ include('projects/_delete_form.html.twig') }}
+            </td> #}
+        </tbody>
+    </table>
+
+    {{ include('projects/_delete_form.html.twig') }}
+
+{% endblock %}

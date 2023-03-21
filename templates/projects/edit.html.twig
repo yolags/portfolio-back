@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar proyecto{% endblock %}
+
+{% block body %}
+    <header>
+        <a class="btn btn-extra" href="{{ path('app_projects_index') }}">Regresar</a>
+    </header>
+    <h1>Editar proyecto</h1>
+
+    {{ include('projects/_form.html.twig', {'button_label': 'Actualizar'}) }}
+
+
+    {{ include('projects/_delete_form.html.twig') }}
+{% endblock %}

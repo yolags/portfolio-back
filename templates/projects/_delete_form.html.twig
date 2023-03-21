@@ -1,0 +1,4 @@
+<form class="delete-form extra-form" method="post" action="{{ path('app_projects_delete', {'id': project.id}) }}" onsubmit="return confirm('¿Estás segura de querer eliminar este proyecto?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ project.id) }}">
+    <button class="btn-add btn btn-delete">Eliminar</button>
+</form>
